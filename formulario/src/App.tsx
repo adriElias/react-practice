@@ -3,26 +3,26 @@ import { Container } from "react-bootstrap";
 import { useState } from 'react';
 
 import Navegacion from "./Navegacion";
-// import Registro from "./Registro";
+import Registro from "./Registro";
 
 function App() {
 
-  const [usuario, setUsuario] = useState(false)
+  const [nombreUsuario, setNombreUsuario] = useState("")
 
   return (
     <>
       <Container>
-        <Navegacion usuario={usuario} setUsuario={setUsuario} />
+        <Navegacion nombreUsuario={nombreUsuario} setNombreUsuario={setNombreUsuario} />
       </Container>
 
       <Container>
         <br />
         <br />
         <br />
-        <h1> App{usuario ? usuario : "sin usuario"}</h1>
+        <h1> App{nombreUsuario ? nombreUsuario : " sin usuario, Registrate"}</h1>
         <br />
         <br />
-        {/* <Registro /> */}
+        <Registro />
 
 
       </Container>

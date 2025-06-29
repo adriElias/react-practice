@@ -2,10 +2,11 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { Form, Col, Row } from 'react-bootstrap';
+import { LoginProps } from './types';
 
 const passwordCorrecto = "1234"
 
-function Login(props) {
+function Login(props: LoginProps) {
 
     const [show, setShow] = useState(false);
     const [password, setPassword] = useState("")
@@ -18,13 +19,13 @@ function Login(props) {
         setShow(true);
     }
 
-    const cambiarNombre = (e) => setNombre(e.target.value)
-    const cambiarPassword = (e) => setPassword(e.target.value)
+    const cambiarNombre = (e: React.ChangeEvent<HTMLInputElement>) => setNombre(e.target.value)
+    const cambiarPassword = (e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)
 
     function validar() {
 
         if (password == passwordCorrecto && nombre.length > 2) {
-            props.setUsuario(nombre)
+            props.setNombreUsuario(nombre)
             //setShow(false)
         } else {
             setMensajeError("Usuario o password no válidos")
