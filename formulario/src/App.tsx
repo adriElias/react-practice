@@ -4,6 +4,8 @@ import { useState } from 'react';
 
 import Navegacion from "./Navegacion";
 import Registro from "./Registro";
+import { Fecha } from './Fecha';
+import { Periodo } from './Periodo';
 
 function App() {
 
@@ -22,7 +24,10 @@ function App() {
         <h1> App{nombreUsuario ? nombreUsuario : " sin usuario, Registrate"}</h1>
         <br />
         <br />
-        <Registro />
+        <Fecha></Fecha>
+        <br />
+        <br />
+        <Periodo></Periodo>
 
 
       </Container>
